@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class FishTrigger : MonoBehaviour,IInteractable
+public class FishGenerator : MonoBehaviour
 {
     [Header("Fish Settings")]
     [SerializeField] private GameObject fishPrefab;          
@@ -12,11 +12,9 @@ public class FishTrigger : MonoBehaviour,IInteractable
 
     private List<GameObject> fishInstances = new List<GameObject>();
 
-    [field: SerializeField] public bool canInteract { get; set; }
 
     private void Start()
     {
-        canInteract = true;
         GenerateFish();
     }
 
@@ -38,9 +36,4 @@ public class FishTrigger : MonoBehaviour,IInteractable
         }
     }
 
-
-    public void Interact()
-    {
-       
-    }
 }   
