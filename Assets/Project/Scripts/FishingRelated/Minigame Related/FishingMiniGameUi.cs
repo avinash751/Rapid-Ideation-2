@@ -7,17 +7,22 @@ public class FishingMiniGameUI : MonoBehaviour
     private void OnEnable()
     {
         FishingMiniGameHandler.OnFishingMiniGameStarted += EnableFishingUI;
+        FishingMiniGameHandler.OnMiniGameExit += DisableFishingUI; // Listen for exit event
     }
 
     private void OnDisable()
     {
-        FishingMiniGameHandler.OnFishingMiniGameStarted += EnableFishingUI;
+        FishingMiniGameHandler.OnFishingMiniGameStarted -= EnableFishingUI;
+        FishingMiniGameHandler.OnMiniGameExit -= DisableFishingUI;
     }
 
-    private void EnableFishingUI()
+    private void EnableFishingUI(FishingSpot triggeredFishingSpot)
     {
         fishingUI?.SetActive(true);
-        Debug.Log("Fishing UI enabled.");
+    }
+
+    private void DisableFishingUI()
+    {
+        fishingUI?.SetActive(false);
     }
 }
-

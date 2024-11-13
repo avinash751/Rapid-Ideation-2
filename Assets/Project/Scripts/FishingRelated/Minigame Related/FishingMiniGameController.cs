@@ -1,17 +1,29 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FishingMiniGameController : MonoBehaviour
 {
-    [SerializeField] private int targetsRequired = 3; // Number of targets to "catch" for success
+    [SerializeField] private int targetsRequired = 3;
     [SerializeField] private RotatingStickUI rotatingStick;
     [SerializeField] private TargetSpawnerUI targetSpawner;
+    [SerializeField] private InputActionReference reFishInput;
 
+    private FishingSpot selectedFishingSpot;
     private int targetsCaught = 0;
+    private bool canReFish = false;
 
-    private void Start()
+    private void OnEnable()
     {
-        targetSpawner.SpawnTargets();
-        rotatingStick.OnTargetHit += HandleTargetHit;
+        rotatingStick.onTargetHit += HandleTargetHit;
+        FishingMiniGameHandler.OnFishingMiniGameStarted += InitializeMiniGame;
+        reFishInput.action.performed += OnReFishInput;
+    }
+
+    private void OnDisable()
+    {
+        rotatingStick.onTargetHit -= HandleTargetHit;
+        FishingMiniGameHandler.OnFishingMiniGameStarted -= InitializeMiniGame;
+        reFishInput.action.performed -= OnReFishInput;
     }
 
     private void HandleTargetHit()
@@ -19,7 +31,7 @@ public class FishingMiniGameController : MonoBehaviour
         targetsCaught++;
         if (targetsCaught >= targetsRequired)
         {
-            FishingMiniGameHandler.TriggerSuccess();
+            FishingMiniGameHandler.TriggerSuccess(selectedFishingSpot);
             EndMiniGame();
         }
     }
@@ -28,12 +40,36 @@ public class FishingMiniGameController : MonoBehaviour
     {
         rotatingStick.enabled = false;
         targetSpawner.ClearTargets();
+        canReFish = true;
 
-        // Optionally, trigger failure if not enough targets were caught
         if (targetsCaught < targetsRequired)
         {
             FishingMiniGameHandler.TriggerFailure();
         }
     }
-}
 
+    private void OnReFishInput(InputAction.CallbackContext context)
+    {
+        if (canReFish && selectedFishingSpot.IsFishAvailable())
+        {
+            FishingMiniGameHandler.StartMiniGame(selectedFishingSpot);
+        }
+        else
+        {
+            Debug.Log("No fish available to catch.");
+        }
+    }
+
+    private void InitializeMiniGame(FishingSpot fishingSpot)
+    {
+        if (fishingSpot != null)
+        {
+            selectedFishingSpot = fishingSpot;
+        }
+        targetSpawner.ClearTargets();  
+        rotatingStick.enabled = true;
+        targetSpawner.SpawnTargets();
+        canReFish = false;
+        targetsCaught = 0;
+    }
+}

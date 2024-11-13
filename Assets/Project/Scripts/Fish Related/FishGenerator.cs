@@ -4,13 +4,13 @@ using System.Collections.Generic;
 public class FishGenerator : MonoBehaviour
 {
     [Header("Fish Settings")]
-    [SerializeField] private GameObject fishPrefab;          
+    [SerializeField] private Fish fishPrefab;          
     [SerializeField] private int minFishCount = 1;           
     [SerializeField] private int maxFishCount = 5;           
     [SerializeField] private Vector3 spawnAreaSize = new Vector3(5, 5, 5); 
      
 
-    private List<GameObject> fishInstances = new List<GameObject>();
+    public List<Fish> fishInstances = new List<Fish>();
 
 
     private void Start()
@@ -30,7 +30,7 @@ public class FishGenerator : MonoBehaviour
                 Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2)
             );
 
-            GameObject fish = Instantiate(fishPrefab, randomPosition, Quaternion.identity);
+            Fish fish = Instantiate(fishPrefab, randomPosition, Quaternion.identity);
             fish.transform.SetParent(transform);
             fishInstances.Add(fish);
         }

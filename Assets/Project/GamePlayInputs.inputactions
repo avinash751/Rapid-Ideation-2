@@ -92,6 +92,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "FishingMIniGameUI",
+            "id": "78ee0614-ba55-4cef-b644-f380c1493a73",
+            "actions": [
+                {
+                    "name": "Catch",
+                    "type": "Button",
+                    "id": "52ea5604-6650-45fe-a3fd-36b36785a0a3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ReFish",
+                    "type": "Button",
+                    "id": "3b16cd46-8b4b-4b0f-bbfa-b2e9f3d84092",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ExitMiniGame",
+                    "type": "Button",
+                    "id": "81e6bac9-3839-46c4-9af9-e9307e317ea7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d111f389-0fb7-4ac6-a118-a7ccd5f86e90",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Catch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b9e8f98-4ee6-4552-b22d-8654950883b1",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "ExitMiniGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb2826ce-ee48-4867-9a28-807d57dca7b5",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "ReFish",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
@@ -101,6 +169,11 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

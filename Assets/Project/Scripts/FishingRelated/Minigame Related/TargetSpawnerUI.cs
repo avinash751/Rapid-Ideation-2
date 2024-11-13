@@ -4,7 +4,7 @@ public class TargetSpawnerUI : MonoBehaviour
 {
     [SerializeField] private GameObject targetPrefab; 
     [SerializeField] private int targetCount = 5;     
-    [SerializeField] private float radius = 2.5f;     
+    [SerializeField] private float radius = 2.5f;
 
     private GameObject[] targets;
 
@@ -23,6 +23,7 @@ public class TargetSpawnerUI : MonoBehaviour
 
     public void ClearTargets()
     {
+        if(targets == null ||targets.Length ==0) return;
         foreach (var target in targets)
         {
             if (target != null) Destroy(target);
