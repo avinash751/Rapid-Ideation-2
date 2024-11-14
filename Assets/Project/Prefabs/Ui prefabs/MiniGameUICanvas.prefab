@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
+  speedMultiplier: 2
   pivot: {fileID: 3751040586953380958}
   catchInput: {fileID: -2064873056464034663, guid: 88ebe83cbac955e49bc07967a995b95c, type: 3}
 --- !u!61 &2235123085171913064
@@ -1024,7 +1025,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPrefab: {fileID: 3007315468297898012, guid: 4e38675832389bf4e92bcd354e16d0c1, type: 3}
-  targetCount: 3
+  minTargetCount: 1
+  maxTargetCount: 5
   radius: 120
 --- !u!1 &8996699898803959443
 GameObject:

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class BuoyancyObject : MonoBehaviour
@@ -18,6 +17,7 @@ public class BuoyancyObject : MonoBehaviour
     [Header("Floating Settings")]
     [SerializeField] float floatingPower;
     [SerializeField] float waterHeight;
+    [SerializeField] bool addFloatersAutomatically;
 
     bool isUnderwater;
     int floatersUnderWater;
@@ -25,6 +25,11 @@ public class BuoyancyObject : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if (!addFloatersAutomatically)
+        {
+            floaters.Add(transform);
+            return;
+        }
         if (transform.childCount > 0)
         {
             foreach (Transform child in transform)
