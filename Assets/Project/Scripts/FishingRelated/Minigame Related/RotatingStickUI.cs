@@ -15,13 +15,22 @@ public class RotatingStickUI : MonoBehaviour
     private void Update()
     {
         transform.RotateAround(pivot.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+        CatchTargetOnInput();
+
+    }
+
+    private void CatchTargetOnInput()
+    {
         if (catchInput.action.triggered && isInTarget)
         {
-            Debug.Log("target caught");
             foundTarget?.BreakObject();
             onTargetHit?.Invoke();
-        }
 
+            if (UnityEngine.Random.value < 0.6f)
+            {
+                rotationSpeed = rotationSpeed * -1;
+            }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

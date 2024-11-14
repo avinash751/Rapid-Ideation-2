@@ -66,10 +66,14 @@ public class FishingMiniGameController : MonoBehaviour
         {
             selectedFishingSpot = fishingSpot;
         }
-        targetSpawner.ClearTargets();  
+        targetSpawner.ClearTargets();
         rotatingStick.enabled = true;
         targetSpawner.SpawnTargets();
+        int spawnedTargetCount = targetSpawner.targets.Length;
+        targetsRequired = Random.Range(1, spawnedTargetCount + 1);
+
         canReFish = false;
         targetsCaught = 0;
     }
+
 }
