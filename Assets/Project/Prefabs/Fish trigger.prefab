@@ -121,7 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90665180aab529f4b832885d41328a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 0}
+  fishPrefab: {fileID: 6951956053887535614, guid: 8c9225e30a2ffbf4aa3fdc2a155b0908, type: 3}
   minFishCount: 1
   maxFishCount: 5
-  spawnAreaSize: {x: 5, y: 5, z: 5}
+  <spawnAreaSize>k__BackingField: {x: 3, y: 2.69, z: 4.1}
+  fishInstances: []

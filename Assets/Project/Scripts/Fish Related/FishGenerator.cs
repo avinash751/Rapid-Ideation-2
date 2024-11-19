@@ -7,7 +7,7 @@ public class FishGenerator : MonoBehaviour
     [SerializeField] private Fish fishPrefab;          
     [SerializeField] private int minFishCount = 1;           
     [SerializeField] private int maxFishCount = 5;           
-    [SerializeField] private Vector3 spawnAreaSize = new Vector3(5, 5, 5); 
+    [field:SerializeField] public Vector3 spawnAreaSize {  get; set; }
      
 
     public List<Fish> fishInstances = new List<Fish>();

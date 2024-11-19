@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class FishMovement: MonoBehaviour
 {
-    [SerializeField] private float speed = 2.0f;
+    [SerializeField] float minSpeed;
+    [SerializeField] float maxSpeed;
+     private float speed = 2.0f;
     [SerializeField] private Vector3 swimRange = new Vector3(3, 3, 3);
 
     private Vector3 targetPosition;
 
     private void Start()
     {
+        FishGenerator fishSpawner = transform.parent.GetComponent<FishGenerator>();
+        swimRange = fishSpawner.spawnAreaSize;
+        swimRange.y -= 1;
+
+        speed = Random.Range(minSpeed, maxSpeed);
+
         SetNewTargetPosition();
     }
 
