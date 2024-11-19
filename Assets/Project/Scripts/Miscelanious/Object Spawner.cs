@@ -3,13 +3,13 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     [Header("Spawner Settings")]
-    [SerializeField] private GameObject objectPrefab;        
-    [SerializeField] private int amountToSpawn = 10;         
-    [SerializeField] private Vector3 spawnAreaBounds = new Vector3(10, 0, 10); 
-    [SerializeField] private Vector3 spawnOffset = Vector3.zero; 
-    [SerializeField] private LayerMask collisionMask;        
-    [SerializeField] private Vector3 overlapBoxSize = Vector3.one; 
-    [SerializeField] private int maxAttemptsPerObject = 10;  
+    [SerializeField] private GameObject objectPrefab;
+    [SerializeField] private int amountToSpawn = 10;
+    [SerializeField] private Vector3 spawnAreaBounds = new Vector3(10, 0, 10);
+    [SerializeField] private Vector3 spawnOffset = Vector3.zero;
+    [SerializeField] private LayerMask collisionMask;
+    [SerializeField] private Vector3 overlapBoxSize = Vector3.one;
+    [SerializeField] private int maxAttemptsPerObject = 10;
 
     private void Start()
     {
@@ -23,7 +23,8 @@ public class ObjectSpawner : MonoBehaviour
             Vector3 spawnPosition = FindValidSpawnPosition();
             if (spawnPosition != Vector3.zero)
             {
-                Instantiate(objectPrefab, spawnPosition + spawnOffset, Quaternion.identity);
+                GameObject spawnedObject = Instantiate(objectPrefab, spawnPosition + spawnOffset, Quaternion.identity);
+                spawnedObject.transform.SetParent(transform);
             }
             else
             {
@@ -38,7 +39,7 @@ public class ObjectSpawner : MonoBehaviour
         {
             Vector3 randomPosition = GetRandomPositionWithinBounds();
 
-            Collider[] colliders = Physics.OverlapBox(randomPosition, overlapBoxSize / 2, Quaternion.identity, collisionMask,QueryTriggerInteraction.Collide);
+            Collider[] colliders = Physics.OverlapBox(randomPosition, overlapBoxSize / 2, Quaternion.identity, collisionMask, QueryTriggerInteraction.Collide);
             if (colliders.Length == 0)
             {
                 return randomPosition;
