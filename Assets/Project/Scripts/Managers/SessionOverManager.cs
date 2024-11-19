@@ -32,7 +32,7 @@ public class SessionOverManager : MonoBehaviour
         quitButton.onClick.RemoveListener(QuitApplication);
     }
 
-    private void HandleSessionOver(GameObject parkedObject)
+    private void HandleSessionOver()
     {
         // Activate the menu object
         if (menuObject != null)

@@ -23,7 +23,10 @@ public class FishTrackerUI : MonoBehaviour
     {
         TryGetComponent(out fishCountText);
         if (fishCountText != null)
-        { fishCountText.text = extraText + 0; }
+        {
+            fishCountText.text = extraText + FishTrackerMediator.Instance.GetTotalFishCollected();
+        }
+         
     }
 
     private void UpdateFishCount(int totalFish)

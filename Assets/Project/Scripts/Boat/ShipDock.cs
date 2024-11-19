@@ -9,7 +9,7 @@ public class ShipDock : MonoBehaviour, IInteractable
     [SerializeField] private Transform parkingSpot;
     [SerializeField] private float dockingDuration = 2f;
     [SerializeField] private LayerMask objectsAllowedToPark;
-    public static event Action<GameObject> OnObjectParkingFinished;
+    public static event Action OnObjectParkingFinished;
 
     private GameObject objectToDock;
 
@@ -53,7 +53,7 @@ public class ShipDock : MonoBehaviour, IInteractable
         targetObject.transform.position = targetPosition;
         targetObject.transform.rotation = targetRotation;
 
-        OnObjectParkingFinished?.Invoke(targetObject);
+        OnObjectParkingFinished?.Invoke();
         objectToDock = null; // Clear reference
     }
 
