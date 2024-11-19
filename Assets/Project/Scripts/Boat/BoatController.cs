@@ -62,12 +62,12 @@ public class BoatController : MonoBehaviour
     {
         if (targetVelocity != Vector3.zero)
         {
-            SetDesiredBoatVelocity(out Vector3 desiredVelocity);
-            rb.AddForce(desiredVelocity, ForceMode.Force);
+            GetAccelerationForce(out Vector3 desiredAccelerationVelocity);
+            rb.AddForce(desiredAccelerationVelocity, ForceMode.Force);
         }
         else
         {
-            ApplyDeceleration(out Vector3 decelerationVelocity);
+            GetDecelerationForce(out Vector3 decelerationVelocity);
             rb.AddForce(decelerationVelocity, ForceMode.Force);
         }
 
@@ -83,14 +83,14 @@ public class BoatController : MonoBehaviour
         }
     }
 
-    private void SetDesiredBoatVelocity(out Vector3 currentVelocity)
+    private void GetAccelerationForce(out Vector3 currentVelocity)
     {
         accelerationTime = Mathf.Min(accelerationTime + Time.deltaTime, accelerationDuration);
         float curveValue = accelerationCurve.Evaluate(accelerationTime / accelerationDuration);
         currentVelocity = Vector3.Lerp(Vector3.zero, targetVelocity, curveValue);
     }
 
-    private void ApplyDeceleration(out Vector3 decelerationVelocity)
+    private void GetDecelerationForce(out Vector3 decelerationVelocity)
     {
         decelerationTime = Mathf.Min(decelerationTime + Time.deltaTime, decelerationDuration);
         float decelerationFactor = decelerationCurve.Evaluate(decelerationTime / decelerationDuration);

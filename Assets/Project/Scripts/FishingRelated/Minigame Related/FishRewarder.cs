@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class FishRewarder : MonoBehaviour
 {
-    [SerializeField] Image finalFishImage;
-    [SerializeField] Sprite defaultFishIcon;
+    [SerializeField] private Image finalFishImage;
+    [SerializeField] private Sprite defaultFishIcon;
 
     private void OnEnable()
     {
@@ -15,13 +15,14 @@ public class FishRewarder : MonoBehaviour
     private void OnDisable()
     {
         FishingMiniGameHandler.OnFishingSuccess -= DisplayRewardedFish;
-        FishingMiniGameHandler.OnFishingMiniGameStarted += ResetFishRewarder;
+        FishingMiniGameHandler.OnFishingMiniGameStarted -= ResetFishRewarder;
     }
 
     void ResetFishRewarder(FishingSpot fishingSpot)
     {
         if (finalFishImage == null) return;
         finalFishImage.sprite = defaultFishIcon;
+
     }
 
     void DisplayRewardedFish(FishingSpot fishingSpot)
@@ -31,8 +32,11 @@ public class FishRewarder : MonoBehaviour
         {
             if (finalFishImage == null) return;
             finalFishImage.sprite = rewardedFish.FishSprite;
+
+            // Increment the fish count in the mediator
+            FishTrackerMediator.Instance.IncrementFishCount();
+
             fishingSpot.RemoveFish(rewardedFish);
         }
     }
-
 }
