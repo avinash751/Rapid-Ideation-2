@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1731548462801360970}
   - component: {fileID: 4301111261416113312}
   - component: {fileID: 1308008768853096352}
-  m_Layer: 0
+  - component: {fileID: 1864716826866147137}
+  m_Layer: 6
   m_Name: Fish trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.39, y: -1.2, z: -1.7028297}
-  m_LocalScale: {x: 3.8251, y: 2.6934652, z: 4.1775}
+  m_LocalScale: {x: 10, y: 2.5, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2264276302356701252}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -66,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1bc649e8060a01d4295c4dc489333318, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,7 +123,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6951956053887535614, guid: 8c9225e30a2ffbf4aa3fdc2a155b0908, type: 3}
-  minFishCount: 1
-  maxFishCount: 5
-  <spawnAreaSize>k__BackingField: {x: 3, y: 2.69, z: 4.1}
+  minFishCount: 3
+  maxFishCount: 10
+  <spawnAreaSize>k__BackingField: {x: 9, y: 2.69, z: 9}
   fishInstances: []
+--- !u!114 &1864716826866147137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2264276302356701252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4186c56ca2d34f14aaea5e81df37add3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <canInteract>k__BackingField: 1
