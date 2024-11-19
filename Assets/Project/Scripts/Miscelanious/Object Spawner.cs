@@ -38,7 +38,6 @@ public class ObjectSpawner : MonoBehaviour
         {
             Vector3 randomPosition = GetRandomPositionWithinBounds();
 
-            // Check for collisions using an overlap box cast
             Collider[] colliders = Physics.OverlapBox(randomPosition, overlapBoxSize / 2, Quaternion.identity, collisionMask,QueryTriggerInteraction.Collide);
             if (colliders.Length == 0)
             {
