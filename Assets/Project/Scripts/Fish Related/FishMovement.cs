@@ -13,7 +13,7 @@ public class FishMovement: MonoBehaviour
     {
         FishGenerator fishSpawner = transform.parent.GetComponent<FishGenerator>();
         swimRange = fishSpawner.spawnAreaSize;
-        swimRange.y -= 1;
+        swimRange.y -= 0;
 
         speed = Random.Range(minSpeed, maxSpeed);
 
@@ -38,7 +38,7 @@ public class FishMovement: MonoBehaviour
     {
         targetPosition = transform.parent.position + new Vector3(
             Random.Range(-swimRange.x, swimRange.x),
-            Random.Range(-swimRange.y, swimRange.y),
+            Random.Range(0,0 ),
             Random.Range(-swimRange.z, swimRange.z)
         );
     }
