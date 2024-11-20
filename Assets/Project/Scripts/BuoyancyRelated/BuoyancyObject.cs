@@ -25,8 +25,9 @@ public class BuoyancyObject : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if (!addFloatersAutomatically)
+        if (!addFloatersAutomatically )
         {
+            if (floaters.Count > 1) return;
             floaters.Add(transform);
             return;
         }
@@ -45,22 +46,28 @@ public class BuoyancyObject : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Initialize counter for floaters under water
         floatersUnderWater = 0;
+
         for (int i = 0; i < floaters.Count; i++)
         {
+            waterHeight = OceanManager.Instance.GetWaterHeightAtPosition(floaters[i].position);
+
             float difference = floaters[i].position.y - waterHeight;
+
 
             if (difference < 0)
             {
                 Vector3 buoyancyForce = Vector3.up * floatingPower * Mathf.Abs(difference);
+
                 rb.AddForceAtPosition(buoyancyForce, floaters[i].position, ForceMode.Force);
+
                 floatersUnderWater++;
                 if (!isUnderwater)
                 {
                     isUnderwater = true;
                     SwitchDragMode();
                 }
-
             }
         }
 

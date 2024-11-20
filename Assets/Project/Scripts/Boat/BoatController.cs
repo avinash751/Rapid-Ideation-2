@@ -54,6 +54,7 @@ public class BoatController : MonoBehaviour
             {
                 decelerationTime = 0f;      
                 targetVelocity = transform.forward * (inputDirection.y * moveSpeed);
+                targetVelocity.y = 0f;
             }        
         }
     }

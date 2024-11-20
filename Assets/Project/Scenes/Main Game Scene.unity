@@ -10484,6 +10484,7 @@ Transform:
   - {fileID: 1282952954}
   - {fileID: 444662587}
   - {fileID: 315973593}
+  - {fileID: 1030384737}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936596981
@@ -11434,6 +11435,271 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020434431}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1030384736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030384737}
+  - component: {fileID: 1030384738}
+  m_Layer: 0
+  m_Name: Oceon Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030384737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030384736}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 924918175}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030384738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030384736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9174d244c3e9e54f8efa7b517e5877d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oceanObjectsTransforms:
+  - {fileID: 1818021080}
+  - {fileID: 718568638}
+  - {fileID: 963892809}
+  - {fileID: 1361658573}
+  - {fileID: 319779932}
+  - {fileID: 1736345923}
+  - {fileID: 1578554526}
+  - {fileID: 1306652855}
+  - {fileID: 2141283459}
+  - {fileID: 2011813659}
+  - {fileID: 1647196511}
+  - {fileID: 1333768634}
+  - {fileID: 1294515481}
+  - {fileID: 135510066}
+  - {fileID: 936596982}
+  - {fileID: 500424901}
+  - {fileID: 644637250}
+  - {fileID: 1230951483}
+  - {fileID: 1603183768}
+  - {fileID: 152457803}
+  - {fileID: 214721059}
+  - {fileID: 1609115122}
+  - {fileID: 1375771095}
+  - {fileID: 2045740560}
+  - {fileID: 1126308501}
+  - {fileID: 573962806}
+  - {fileID: 23417905}
+  - {fileID: 1190105869}
+  - {fileID: 1277536870}
+  - {fileID: 1679359349}
+  - {fileID: 924715636}
+  - {fileID: 780441758}
+  - {fileID: 895725277}
+  - {fileID: 1853334593}
+  - {fileID: 732320955}
+  - {fileID: 1364804770}
+  - {fileID: 126584971}
+  - {fileID: 433818112}
+  - {fileID: 423388976}
+  - {fileID: 1883555843}
+  - {fileID: 1747897363}
+  - {fileID: 594829950}
+  - {fileID: 1641089030}
+  - {fileID: 1957530607}
+  - {fileID: 676096955}
+  - {fileID: 237607364}
+  - {fileID: 1556685835}
+  - {fileID: 330952838}
+  - {fileID: 952356877}
+  - {fileID: 2006234309}
+  - {fileID: 1353965970}
+  - {fileID: 421940968}
+  - {fileID: 512373321}
+  - {fileID: 1660469021}
+  - {fileID: 584933411}
+  - {fileID: 1938719915}
+  - {fileID: 1232518933}
+  - {fileID: 1607726796}
+  - {fileID: 1720115346}
+  - {fileID: 893513825}
+  - {fileID: 1547256133}
+  - {fileID: 1633355501}
+  - {fileID: 1707530844}
+  - {fileID: 642378505}
+  - {fileID: 1077918728}
+  - {fileID: 466872663}
+  - {fileID: 1480810980}
+  - {fileID: 900364104}
+  - {fileID: 910008667}
+  - {fileID: 1721018622}
+  - {fileID: 1290025990}
+  - {fileID: 103855263}
+  - {fileID: 271011764}
+  - {fileID: 745332316}
+  - {fileID: 2143062478}
+  - {fileID: 480393781}
+  - {fileID: 1659622279}
+  - {fileID: 601754555}
+  - {fileID: 1695600033}
+  - {fileID: 1340488254}
+  - {fileID: 2146943104}
+  - {fileID: 1050608363}
+  - {fileID: 2139798212}
+  - {fileID: 612537449}
+  - {fileID: 80260155}
+  - {fileID: 739093292}
+  - {fileID: 882764227}
+  - {fileID: 1958382090}
+  - {fileID: 1020434432}
+  - {fileID: 1936555191}
+  - {fileID: 1840626263}
+  - {fileID: 1551010391}
+  - {fileID: 52010290}
+  - {fileID: 1483261388}
+  - {fileID: 1406944596}
+  - {fileID: 862817080}
+  - {fileID: 1877383583}
+  - {fileID: 51451335}
+  - {fileID: 144513425}
+  - {fileID: 1171464350}
+  - {fileID: 1600548798}
+  - {fileID: 546665040}
+  - {fileID: 1439894038}
+  - {fileID: 683033400}
+  - {fileID: 1659092470}
+  - {fileID: 125716898}
+  - {fileID: 129975537}
+  - {fileID: 1832183140}
+  - {fileID: 215819432}
+  - {fileID: 816192747}
+  - {fileID: 512663017}
+  - {fileID: 579362824}
+  - {fileID: 1259268401}
+  - {fileID: 191147080}
+  - {fileID: 300264446}
+  - {fileID: 1557571386}
+  - {fileID: 236570230}
+  - {fileID: 1617907337}
+  - {fileID: 1945620792}
+  - {fileID: 1702296931}
+  - {fileID: 897281149}
+  - {fileID: 2031964876}
+  - {fileID: 2091730781}
+  - {fileID: 609124972}
+  - {fileID: 2075587488}
+  - {fileID: 1728857902}
+  - {fileID: 846027461}
+  - {fileID: 396956108}
+  - {fileID: 999614046}
+  - {fileID: 839710476}
+  - {fileID: 472328387}
+  - {fileID: 1725520150}
+  - {fileID: 627416706}
+  - {fileID: 1632233861}
+  - {fileID: 613138918}
+  - {fileID: 530291845}
+  - {fileID: 1261562688}
+  - {fileID: 773682012}
+  - {fileID: 423906792}
+  - {fileID: 397965518}
+  - {fileID: 866835556}
+  - {fileID: 280292168}
+  - {fileID: 1591346457}
+  - {fileID: 55897168}
+  - {fileID: 944692690}
+  - {fileID: 1094947352}
+  - {fileID: 855540233}
+  - {fileID: 1290151232}
+  - {fileID: 187587422}
+  - {fileID: 51251209}
+  - {fileID: 1952534756}
+  - {fileID: 634148968}
+  - {fileID: 481465184}
+  - {fileID: 1000969786}
+  - {fileID: 28969182}
+  - {fileID: 1241388850}
+  - {fileID: 1762252462}
+  - {fileID: 244746229}
+  - {fileID: 505070298}
+  - {fileID: 1963637687}
+  - {fileID: 251474084}
+  - {fileID: 1531538085}
+  - {fileID: 655989827}
+  - {fileID: 683304653}
+  - {fileID: 1340297295}
+  - {fileID: 144606812}
+  - {fileID: 1068897115}
+  - {fileID: 1282763120}
+  - {fileID: 1309750636}
+  - {fileID: 368336251}
+  - {fileID: 196023273}
+  - {fileID: 1782389622}
+  - {fileID: 332995820}
+  - {fileID: 164819710}
+  - {fileID: 1371936429}
+  - {fileID: 169767038}
+  - {fileID: 23297603}
+  - {fileID: 186280668}
+  - {fileID: 1570817127}
+  - {fileID: 653635708}
+  - {fileID: 851908237}
+  - {fileID: 1076021697}
+  - {fileID: 245278222}
+  - {fileID: 248729258}
+  - {fileID: 1788022937}
+  - {fileID: 1578241027}
+  - {fileID: 1542157531}
+  - {fileID: 43833109}
+  - {fileID: 656569083}
+  - {fileID: 721805099}
+  - {fileID: 1229069697}
+  - {fileID: 1422801585}
+  - {fileID: 485628724}
+  - {fileID: 1985126141}
+  - {fileID: 296846342}
+  - {fileID: 2089197148}
+  - {fileID: 1296359877}
+  - {fileID: 2007110852}
+  - {fileID: 2078459650}
+  - {fileID: 1633289507}
+  - {fileID: 711071685}
+  - {fileID: 1741516863}
+  - {fileID: 876989669}
+  - {fileID: 1674908879}
+  - {fileID: 992926091}
+  - {fileID: 1679223204}
+  - {fileID: 991796052}
+  - {fileID: 896379337}
+  - {fileID: 431545329}
+  - {fileID: 853385507}
+  - {fileID: 1739405933}
+  - {fileID: 1174216856}
+  - {fileID: 1352624700}
+  - {fileID: 2062940682}
+  - {fileID: 410472629}
+  - {fileID: 1783625481}
+  waveAmplitude: 0.25
+  waveFrequency: 1.234568
+  waveSpeed: 0.05
+  setHeight: 1.2
 --- !u!1 &1050608362
 GameObject:
   m_ObjectHideFlags: 0
@@ -22130,7 +22396,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896004078377224456, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
       propertyPath: waterHeight
-      value: 1.5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896004078377224456, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
+      propertyPath: floatingPower
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896004078377224456, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
+      propertyPath: floaters.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896004078377224456, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
+      propertyPath: 'floaters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896004078377224456, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
+      propertyPath: 'floaters.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896004078377224456, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
+      propertyPath: 'floaters.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896004078377224456, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
+      propertyPath: 'floaters.Array.data[3]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6500952936880594787, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
       propertyPath: m_Name
@@ -22158,7 +22448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7475812098677670408, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7475812098677670408, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -22166,7 +22456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7475812098677670408, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7475812098677670408, guid: e2c7482c65164f145ab233ee496eb7b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
